@@ -8,12 +8,12 @@ export default function PastaPage({ data }) {
   } = data
   return (
     <>
-      <h2>
+      <h1>
         Copy/Paste{" "}
         <span role="img" aria-label="pasta dish emoji">
           🍝
         </span>
-      </h2>
+      </h1>
       <p>
         This is a collection of code snippet that I find myself use often or
         code snippet that I find neat. These snippets are not "novice" but code

@@ -18,7 +18,7 @@ export default function HomePage({ data }) {
   return (
     <>
       <SEO title="Hjem" image={file.childCloudinaryAsset.fluid} />
-      <h2>Hi! I'm Philip, and I'm a web developer</h2>
+      <h1>Hi! I'm Philip, and I'm a web developer</h1>
       <p>
         I'm from Denmark, but currently I live in Czech Republic with my
         girlfriend to experience life abroad and learn from the talented people
@@ -27,13 +27,19 @@ export default function HomePage({ data }) {
       <p>
         I'm a JavaScript/TypeScript software developer who focuses on front-end
         frameworks such as Reacrt and Svelte. I have a passion for Web
-        Accessibility and preferment applications. I have experience working
-        large and complex React web applications that require cross-team
-        collaboration and global state management (Redux) in Agile and Kanban
-        settings. I've also worked on smaller web applications such as admin
-        dashboards and user forms. I also develop back-end services done in
-        NodeJS and making scripts for automating tasks. I'm not afraid to take
-        on a hard challenge and dive into unknown territory.
+        Accessibility and preferment applications.
+      </p>
+      <p>
+        I have experience working large and complex React web applications that
+        require cross-team collaboration and global state management (Redux) in
+        Agile and Kanban settings.
+      </p>
+
+      <p>
+        I've also worked on smaller web applications such as admin dashboards
+        and user forms. I also develop back-end services done in NodeJS and
+        making scripts for automating tasks. I'm not afraid to take on a hard
+        challenge and dive into unknown territory.
       </p>
       <Img fluid={file.childCloudinaryAsset.fluid} alt="Profile" />
       <ContentList content={allMdx} base="projects" title="Projects" />

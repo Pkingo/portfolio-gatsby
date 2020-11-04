@@ -30,7 +30,7 @@ const ContentListStyles = styled.div`
 function ContentLink({ frontmatter, slug, excerpt, base }) {
   return (
     <ContentLinkStyles to={`/${base}/${slug}`}>
-      <h4>{frontmatter.title}</h4>
+      <h3>{frontmatter.title}</h3>
       <p>{excerpt}</p>
     </ContentLinkStyles>
   )
@@ -39,7 +39,7 @@ function ContentLink({ frontmatter, slug, excerpt, base }) {
 export default function ContentList({ content, title, base }) {
   return (
     <ContentListStyles>
-      {title && <h3>{title}</h3>}
+      {title && <h2>{title}</h2>}
       {content.map(node => (
         <ContentLink key={node.id} {...node} base={base} />
       ))}

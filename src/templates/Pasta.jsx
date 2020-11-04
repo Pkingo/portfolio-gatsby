@@ -25,6 +25,14 @@ const PastaHeaderStyles = styled.div`
     cursor: pointer;
     background-color: var(--green);
   }
+  @media (max-width: 650px) {
+    align-items: start;
+    flex-direction: column;
+
+    button {
+      width: 100%;
+    }
+  }
 `
 
 export default function PastaTemplatePage({ data }) {

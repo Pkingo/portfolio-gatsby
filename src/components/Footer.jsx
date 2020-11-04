@@ -68,7 +68,7 @@ const FooterStyles = styled.footer`
 
 export default function Footer() {
   return (
-    <FooterStyles>
+    <FooterStyles role="contentinfo">
       <div className="title">
         <h2>Let's create something together!</h2>
         <p>Reach out if you also like React and/or Svelte LinkedIn GitHub</p>
@@ -91,10 +91,7 @@ export default function Footer() {
       </span>
       <div className="line" />
       <div className="copyright">
-        <p>Made by Philip Anderas Kingo with Gatsby, React and MDX</p>
-        <span role="img" aria-label="heart">
-          ❤️
-        </span>
+        <p>© 2020 Philip Andreas Kingo, made with Gatsby, React and MDX</p>
       </div>
     </FooterStyles>
   )

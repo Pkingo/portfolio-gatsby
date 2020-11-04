@@ -10,6 +10,8 @@ const StyledMenu = styled.nav`
   padding: 2rem;
   color: white;
   ul {
+    list-style: none;
+    display: flex;
     margin: 0;
     & > *:not(:first-child) {
       margin-left: 2rem;
@@ -28,12 +30,16 @@ const StyledMenu = styled.nav`
     z-index: 2;
   }
   @media (max-width: 650px) {
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    right: 0;
     ul {
       z-index: 1;
       display: flex;
       flex-direction: column;
       position: fixed;
-      padding: 12rem 4rem 0 4rem;
+      padding: 12rem 12rem 0 2rem;
       top: 0;
       left: 0;
       bottom: 0;
@@ -43,8 +49,8 @@ const StyledMenu = styled.nav`
         open ? "translateX(0)" : "translateX(-100%)"};
       transition: transform 0.3s ease-in-out;
 
-      & > a:not(:first-child) {
-        margin-top: 2rem;
+      & > *:not(:first-child) {
+        margin-top: 4rem;
         margin-left: 0rem;
       }
 
@@ -54,29 +60,6 @@ const StyledMenu = styled.nav`
     }
   }
 `
-
-const Menu = ({ open, setOpen }) => {
-  return (
-    <StyledMenu open={open}>
-      <div className="brand">
-        <Link to="/">
-          <h2 className="code">
-            <strong>Philip Andreas</strong> Kingo
-          </h2>
-        </Link>
-      </div>
-      <ul>
-        <Link className="code" onClick={() => setOpen(false)} to="/pasta">
-          Copy/Paste
-        </Link>
-        <Link className="code" onClick={() => setOpen(false)} to="/kontakt">
-          Kontakt
-        </Link>
-      </ul>
-      <Burger open={open} setOpen={setOpen} />
-    </StyledMenu>
-  )
-}
 
 const StyledBurger = styled.button`
   display: none;
@@ -146,11 +129,28 @@ export default function Header() {
   const node = React.useRef()
   useOnClickOutside(node, () => setOpen(false))
   return (
-    <div>
-      <div ref={node}>
-        <Menu open={open} setOpen={setOpen} />
+    <StyledMenu open={open} ref={node} role="navigation">
+      <div className="brand">
+        <Link to="/">
+          <h2 className="code">
+            <strong>Philip Andreas</strong> Kingo
+          </h2>
+        </Link>
       </div>
-    </div>
+      <ul>
+        <li>
+          <Link className="code" onClick={() => setOpen(false)} to="/pasta">
+            Copy/Paste
+          </Link>
+        </li>
+        <li>
+          <Link className="code" onClick={() => setOpen(false)} to="/contact">
+            Contact
+          </Link>
+        </li>
+      </ul>
+      <Burger open={open} setOpen={setOpen} />
+    </StyledMenu>
   )
 }
 
