@@ -37,9 +37,9 @@ export default function HomePage({ data }) {
 
       <p>
         I've also worked on smaller web applications such as admin dashboards
-        and user forms. I also develop back-end services done in NodeJS and
-        making scripts for automating tasks. I'm not afraid to take on a hard
-        challenge and dive into unknown territory.
+        and user forms. I have experience with developing back-end services in
+        NodeJS and making scripts for automating tasks. I'm not afraid to take
+        on a hard challenge and dive into unknown territory.
       </p>
       <Img fluid={file.childCloudinaryAsset.fluid} alt="Profile" />
       <ContentList content={allMdx} base="projects" title="Projects" />

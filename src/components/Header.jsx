@@ -29,6 +29,9 @@ const StyledMenu = styled.nav`
   .brand {
     z-index: 2;
   }
+  .home {
+    display: none;
+  }
   @media (max-width: 650px) {
     z-index: 1;
     position: fixed;
@@ -57,6 +60,9 @@ const StyledMenu = styled.nav`
       @media (max-width: 300px) {
         width: 100%;
       }
+    }
+    .home {
+      display: inherit;
     }
   }
 `
@@ -91,6 +97,7 @@ const StyledBurger = styled.button`
 
       :first-child {
         transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
+        width: ${({ open }) => open && "2.18rem"};
       }
 
       :nth-child(2) {
@@ -101,6 +108,7 @@ const StyledBurger = styled.button`
 
       :nth-child(3) {
         transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
+        width: ${({ open }) => open && "2.18rem"};
       }
     }
   }
@@ -138,6 +146,11 @@ export default function Header() {
         </Link>
       </div>
       <ul>
+        <li className="home">
+          <Link className="code" onClick={() => setOpen(false)} to="/">
+            Home
+          </Link>
+        </li>
         <li>
           <Link className="code" onClick={() => setOpen(false)} to="/pasta">
             Copy/Paste
