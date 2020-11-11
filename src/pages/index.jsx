@@ -17,7 +17,7 @@ export default function HomePage({ data }) {
   } = data
   return (
     <>
-      <SEO title="Hjem" image={file.childCloudinaryAsset.fluid} />
+      <SEO title="Hjem" image={file.childCloudinaryAsset.fluid.src} />
       <h1>Hi! I'm Philip, and I'm a web developer</h1>
       <p>
         I'm from Denmark, but currently I live in Czech Republic with my
